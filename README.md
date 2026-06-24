@@ -202,9 +202,10 @@ Future studies could integrate carbon emissions, fossil fuel generation, investm
 - Apply forecasting techniques to predict future solar electricity generation trends.
 
 ### References
--Climate Home News. (2026, February 4). Africa records fastest-ever solar growth as installations jump in 2025. climatechangenews.com
--Department of Forestry, Fisheries and the Environment. (2025). Minister George welcomes decline in coal's share of South Africa's electricity generation mix. Republic of South Africa. dffe.gov.za
--Ember. (2026). Africa electricity profile. ember-energy.org
--Global Solar Council. (2025). Africa solar growth 2025: Drivers and import dynamics. Solarbytes. solarbytes.info
--South African Photovoltaic Industry Association. (2025). SAPVIA sees ongoing solar market recovery laying basis for industrialisation. Engineering News. engineeringnews.co.za
--South African Photovoltaic Industry Association. (2026). Parliamentary briefing on national grid capacity and REIPPPP procurement. sawea.org.za
+
+*Climate Home News. (2026, February 4). Africa records fastest-ever solar growth as installations jump in 2025. climatechangenews.com
+*Department of Forestry, Fisheries and the Environment. (2025). Minister George welcomes decline in coal's share of South Africa's electricity generation mix. Republic of South Africa. dffe.gov.za
+*Ember. (2026). Africa electricity profile. ember-energy.org
+*Global Solar Council. (2025). Africa solar growth 2025: Drivers and import dynamics. Solarbytes. solarbytes.info
+*South African Photovoltaic Industry Association. (2025). SAPVIA sees ongoing solar market recovery laying basis for industrialisation. Engineering News. engineeringnews.co.za
+*South African Photovoltaic Industry Association. (2026). Parliamentary briefing on national grid capacity and REIPPPP procurement. sawea.org.za
