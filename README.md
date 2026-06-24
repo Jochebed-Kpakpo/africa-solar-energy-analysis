@@ -1,63 +1,210 @@
-# *Africa Solar Energy Analysis*
+# Africa Solar Energy Analysis
 
 ## Project Overview
-
-This project explores solar energy adoption trends across African countries using historical energy consumption data. The analysis investigates how solar energy deployment has evolved over time, identifies countries leading the energy transition, and highlights patterns relevant to sustainable development and climate action.
+Africa has significant solar energy potential, yet the adoption of solar power varies widely across countries. This project analyzes solar electricity generation data trends across African countries using Python and publicly available solar energy data.
+The study examines how solar generation has changed over time, identifies the leading solar-producing countries in Africa, and evaluates Ghana's progress in solar energy development. Data cleaning, ranking, trend analysis, and visualization techniques were used to generate insights into renewable energy deployment across the continent.
+The findings provide evidence of Africa's ongoing energy transition and highlight opportunities for expanding solar energy to support sustainable development, energy security, and climate action.
 
 ## Objectives
+* Analyze solar electricity generation trends across African countries using publicly available dataset.
 
-* Analyze historical solar energy consumption trends across Africa.
-* Identify countries with the fastest growth in solar energy adoption.
-* Compare solar energy development across African regions.
-* Generate data-driven insights relevant to energy transition and sustainability.
+* Identify the leading solar producing countries in Africa and compare their generation levels.
+
+* Examine the growth of solar electricity generation in Ghana and assess changes over time.
+
+* Compare solar energy development patterns in Ghana, South Africa, and Egypt.
+
+* Generate data-driven insights to support discussions on renewable energy adoption, sustainability, and Africa's energy transition.
+
+* Explore the implications of solar energy growth for climate action, energy security, and sustainable development.
 
 ## Dataset
 
-The dataset contains historical solar energy consumption records for multiple countries and territories over several decades.
+The analysis used solar electricity generation data compiled by Our World in Data from Ember (2026) and the Energy Institute Statistical Review of World Energy (2025). The dataset contains annual solar electricity generation records for countries and regions worldwide and was filtered to include African countries with reported solar generation data.
 
 ### Variables
 
-| Variable | Description                    |
-| -------- | ------------------------------ |
-| Entity   | Country or region              |
-| Code     | Country code                   |
-| Year     | Observation year               |
-| Solar    | Solar energy consumption value |
+| Variable | Description                        |
+| -------- | ---------------------------------- |
+| Entity   | Country or region name             |
+| Code     | Three-letter country code          |
+| Year     | Reporting year                     |
+| Solar    | Solar electricity generation (TWh) |
+
+### Study Scope
+
+The analysis focused on African countries with available solar electricity generation data. Particular attention was given to Ghana, South Africa, and Egypt to examine differences in solar energy deployment and growth patterns across the continent. These three countries were the focal point because South Africa is the continent's leading solar electricity producer, generating 19.85 TWh in 2024. Also, Egypt was included because it is one of Africa's fastest-growing solar markets and hosts large-scale projects such as the Benban Solar Park. Finally, Ghana was selected due to its growing solar market to examine the progress of solar energy adoption in a lower-generation context. Comparing these countries provides insight into how solar energy deployment varies across different policy, investment, and infrastructure environments within Africa.
 
 ## Methodology
 
-The analysis will include:
+The analysis was conducted using Python in a Jupyter Notebook environment with the Pandas, NumPy, Matplotlib, and Seaborn libraries.
 
-1. Data cleaning and preprocessing
-2. Exploratory data analysis (EDA)
-3. Trend analysis
-4. Country-level comparisons
-5. Data visualization
-6. Sustainability and policy interpretation
+The dataset was imported from a CSV file and explored using descriptive functions such as `head()`, `shape()`, and `info()` to examine its structure, dimensions, and data types. The temporal coverage of the dataset was determined by identifying the earliest and latest reporting years using the `min()` and `max()` functions.
+
+To improve data quality, records without country codes were removed using the `dropna()` function. Since the original dataset contained countries, regions, and aggregated entities from around the world, a custom list of 54 African countries was created and used to filter the dataset with the `isin()` function, producing an Africa-specific dataset (`africa_df`).
+
+Continental solar energy trends were analyzed by grouping data by year and calculating total annual solar electricity generation using the `groupby()` and `sum()` functions. This aggregation was used to evaluate how solar energy consumption evolved across Africa over time.
+
+Country rankings were generated by aggregating solar electricity generation by country and sorting values in descending order using `sort_values()`. Additional ranking analysis was performed using data from the most recent reporting year to identify Africa's leading solar electricity producers in 2024.
+
+A country-level case study was conducted for Ghana by filtering records where `Entity = Ghana` and examining annual changes in solar electricity generation. Comparative analysis was subsequently performed for Ghana, South Africa, and Egypt to evaluate differences in solar energy deployment patterns among an emerging solar market, a rapidly expanding solar market, and Africa's leading solar producer.
+
+Data visualization was performed using Matplotlib. Line charts were used to visualize continental and country-level solar generation trends, while bar charts were used to compare solar generation across countries and identify leading solar producers. The resulting outputs were interpreted to assess renewable energy adoption, growth patterns, sustainability implications, and policy-relevant insights related to Africa's energy transition.
 
 ## Tools Used
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Jupyter Notebook
+### Programming and Data Analysis
 
-## Key Research Questions
+* **Python** – Used for data cleaning, filtering, aggregation, statistical analysis, and visualization.
+* **Pandas** – Used for data manipulation, filtering, grouping, sorting, and country-level analysis.
+* **NumPy** – Used for numerical operations and data processing.
+* **Jupyter Notebook** – Used as the interactive development environment for coding, analysis, and documentation.
 
-* Which African countries have experienced the greatest growth in solar energy adoption?
-* How has solar energy consumption changed over time?
-* What regional patterns can be observed?
-* What insights can support sustainable energy transitions in Africa?
+### Data Visualization
 
-## Expected Outputs
+* **Matplotlib** – Used to create line charts and bar charts for trend analysis, country rankings, and comparative visualizations.
+* **Seaborn** – Imported as part of the analytical workflow and available for advanced statistical visualization.
 
-* Trend visualizations
-* Country rankings
-* Growth analysis
-* Sustainability insights
-* Policy-relevant observations
+### Version Control and Project Management
 
-## Relevance
+* **Git** – Used for version control and tracking project development.
+* **GitHub** – Used for project documentation, portfolio presentation, and code sharing.
 
-This project demonstrates the application of data analytics to renewable energy and sustainability challenges. It aligns with interests in climate action, energy transition, and evidence-based decision-making for sustainable development.
+### Dataset
+
+* **Solar Energy Consumption Dataset** – Historical solar electricity generation data used to evaluate solar energy adoption trends across African countries.
+
+## Visualizations
+
+### 1. Solar Energy Consumption in Africa Over Time
+
+![Africa Solar Trend](images/africa_solar_trend.png)
+
+This line chart shows the evolution of total solar electricity generation across Africa. Solar energy consumption remained negligible before 2010, increased gradually after 2015, and accelerated rapidly after 2020. 
+
+### 2. Top Solar Producers in Africa (2024)
+
+![Top Solar Producers](images/top_solar_producers.png)
+
+This bar chart ranks African countries according to solar electricity generation in 2024. South Africa emerged as the leading solar producer with 19.85 TWh, followed by Egypt (6.07 TWh) and Morocco (1.59 TWh). 
+
+### 3. Solar Power Generation in Ghana
+
+![Ghana Solar Trend](images/solar_generation.png)
+
+This line chart illustrates changes in solar electricity generation in Ghana over time. Solar generation remained low before 2019 but increased steadily between 2019 and 2023. 
+
+### 4. Solar Generation Comparison: Ghana, South Africa, and Egypt
+
+![Solar Comparison](images/solar_comparison.png)
+
+This comparative line chart examines solar electricity generation trends in Ghana, South Africa, and Egypt. The visualization demonstrates substantial differences in deployment trajectories, with South Africa showing the most rapid expansion, Egypt experiencing strong growth after 2018, and Ghana displaying steady but comparatively modest progress.
+
+## Key Results
+
+- Africa's solar electricity generation increased from 3.36 TWh in 2015 to 29.91 TWh in 2023, representing approximately 790% growth.
+- South Africa was Africa's leading solar electricity producer in 2024, generating 19.85 TWh.
+- Egypt ranked second with 6.07 TWh, while Morocco ranked third with 1.59 TWh.
+- South Africa, Egypt, and Morocco collectively accounted for approximately 96% of the solar electricity generated by the continent's leading solar-producing countries.
+- Ghana's solar electricity generation increased from 0.05 TWh in 2019 to 0.15 TWh in 2023, representing a threefold increase.
+- Policy frameworks that reduced investment risk and attracted large-scale financing were associated with higher solar deployment levels.
+
+## Analysis and Insights
+
+### Top Solar Producers in Africa
+
+The analysis identified South Africa as Africa's leading solar electricity producer in 2024, generating 19.85 TWh of solar electricity. Egypt ranked second with 6.07 TWh, while Morocco ranked third with 1.59 TWh. The large difference between South Africa and the remaining countries highlights the concentration of solar electricity generation within a few African economies.
+
+### Solar Energy Growth in Ghana
+
+Ghana's solar electricity generation remained relatively low throughout the study period but demonstrated steady growth after 2019. Solar generation increased from 0.05 TWh in 2019 to a peak of 0.16 TWh in 2022 before declining slightly to 0.15 TWh in 2023. Although the absolute level of generation remains modest, the upward trend indicates increasing adoption of solar energy technologies within Ghana's electricity sector.
+
+### Comparative Analysis of Ghana, South Africa, and Egypt
+
+Comparison of Ghana, South Africa, and Egypt revealed three distinct solar energy development pathways. South Africa experienced the most rapid and sustained growth, emerging as the continent's dominant solar producer. Egypt recorded strong expansion after 2018 and established itself as Africa's second-largest solar electricity producer. Ghana exhibited gradual but consistent growth, reflecting the development of an emerging solar market. These differences demonstrate the varying pace of renewable energy deployment across African countries.
+
+
+## Sustainability and Policy Insights
+
+### Alignment with SDG 7
+
+The growth of solar electricity generation across Africa aligns with Sustainable Development Goal 7 (Affordable and Clean Energy), which seeks to ensure access to affordable, reliable, sustainable, and modern energy for all. Analysis of the dataset showed that Africa's solar electricity generation increased from 3.36 TWh in 2015 to 29.91 TWh in 2023, representing approximately 790% growth within eight years.
+This rapid expansion demonstrates the increasing role of solar energy in diversifying Africa's electricity supply and reducing dependence on conventional energy sources. Solar technologies are particularly important for improving electricity access in remote and underserved communities where grid extension remains technically challenging or economically unfeasible.
+
+### Country Alignment with SDG 7
+
+Analysis of the dataset showed that Africa's solar electricity generation increased from 3.36 TWh in 2015 to 29.91 TWh in 2023, representing approximately 790% growth within eight years. This increase reflects the growing role of renewable energy in Africa's electricity sector and demonstrates progress toward expanding access to clean energy sources.
+
+The strongest contributions to this progress were observed in South Africa, Egypt, and Morocco. In 2024, South Africa generated 19.85 TWh of solar electricity, accounting for approximately 69% of Africa's total solar generation. Egypt contributed 6.07 TWh (about 21%), while Morocco generated 1.59 TWh (about 6%).
+
+Together, these three countries accounted for more than 95% of the solar electricity generated by the leading African solar-producing nations in the dataset, demonstrating their significant contribution to advancing SDG 7 on the continent.
+
+Although countries such as Ghana, Kenya, and Tunisia currently generate smaller amounts of solar electricity, their positive growth trends indicate increasing adoption of clean energy technologies and growing participation in Africa's energy transition.
+
+### Influence of Renewable Energy Policies
+
+The analysis suggests that renewable energy policies play a critical role in determining the pace of solar energy deployment across Africa. However, the presence of a renewable energy policy alone does not guarantee rapid solar expansion. The effectiveness of a policy depends on its ability to attract investment, reduce project risk, support large-scale project development, and provide long-term regulatory certainty.
+
+| Factor                | South Africa                                    | Egypt                                                            | Ghana                                                        |
+| --------------------- | ----------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------ |
+| Key Policy Instrument | REIPPPP competitive bidding programme           | Feed-in tariffs and competitive procurement schemes              | Renewable Energy Act (2011) and Renewable Energy Master Plan |
+| Investor Incentives   | Long-term Power Purchase Agreements (PPAs)      | Government-backed contracts and feed-in tariffs                  | Renewable energy targets and policy support                  |
+| Project Scale         | Multiple utility-scale solar farms              | Benban Solar Park (1.46 GW) and other utility-scale projects     | Primarily small- and medium-scale projects                   |
+| Investment Attraction | Over US$17 billion in private-sector investment | Significant international financing and development bank support | Relatively lower renewable energy investment                 |
+| Solar Generation      | 19.85 TWh (2024)                                | 6.07 TWh (2024)                                                  | 0.15 TWh (2023)                                              |
+
+South Africa provides the strongest example of policy-driven solar growth. Through the Renewable Energy Independent Power Producer Procurement Programme (REIPPPP), investors were offered long-term Power Purchase Agreements (PPAs), providing certainty that electricity generated from solar projects would be purchased over extended periods. This reduced investment risk, attracted more than US$17 billion in private-sector investment, and contributed to South Africa generating 19.85 TWh of solar electricity in 2024, accounting for approximately 69% of Africa's total solar generation.
+
+Egypt achieved similar success through feed-in tariff policies, competitive procurement programmes, and strategic investment in utility-scale solar infrastructure. The development of the 1.46 GW Benban Solar Park, one of the largest solar installations in the world, attracted substantial international financing and accelerated solar deployment. Consequently, Egypt generated 6.07 TWh of solar electricity in 2024, representing approximately 21% of Africa's total solar generation.
+
+Although Ghana established a policy foundation through the Renewable Energy Act (2011) and the Renewable Energy Master Plan, solar deployment has remained comparatively modest. Ghana generated only 0.15 TWh of solar electricity in 2023, equivalent to approximately 0.5% of Africa's total solar generation. Compared with South Africa and Egypt, Ghana has attracted lower levels of renewable energy investment and developed fewer utility-scale solar projects. This suggests that policy ambitions must be complemented by effective implementation mechanisms, financing opportunities, infrastructure development, and investor confidence to achieve large-scale renewable energy growth.
+
+This indicates that successful renewable energy transitions depend not only on the existence of renewable energy policies but also on their ability to mobilize capital, reduce investment uncertainty, and support long-term project development.
+
+
+### Ghana's Emerging Solar Sector
+
+Ghana has established a policy foundation for renewable energy development through the Renewable Energy Act, 2011 (Act 832) and the Renewable Energy Master Plan. These initiatives have supported the gradual expansion of solar electricity generation, which increased from 0.05 TWh in 2019 to 0.15 TWh in 2023, representing a threefold increase within four years.
+
+Despite this progress, Ghana's solar generation remains relatively low compared with Africa's leading solar markets. In 2023, Ghana generated approximately 0.15 TWh of solar electricity, accounting for only about 0.5% of Africa's total solar generation (29.91 TWh). By comparison, South Africa generated 19.85 TWh in 2024, while Egypt produced 6.07 TWh.
+
+The findings suggest that Ghana has made important progress in renewable energy adoption but has yet to fully exploit its solar resource potential. Given the country's high solar irradiation levels and increasing electricity demand, further investment in utility-scale solar projects, grid infrastructure, energy storage systems, and private-sector participation could significantly accelerate solar deployment.
+
+### Unequal Renewable Energy Deployment Across Africa
+
+The results reveal significant disparities in solar electricity generation across African countries. While South Africa, Egypt, and Morocco have achieved substantial deployment, many countries continue to record very low levels of solar generation. Differences in financing, infrastructure, regulatory frameworks, and technical capacity likely contribute to this uneven distribution.
+
+### Implications for Climate Action
+
+The rapid growth of solar electricity generation across Africa has important implications for climate action and sustainable development. Between 2015 and 2023, Africa's solar electricity generation increased from 3.36 TWh to 29.91 TWh, representing approximately 790% growth within eight years. This expansion demonstrates the increasing role of renewable energy in Africa's electricity sector.
+
+South Africa provides a practical example of how solar energy deployment can contribute to climate mitigation. Historically, coal supplied more than 80% of the country's electricity, making South Africa one of Africa's largest greenhouse gas emitters. However, the expansion of renewable energy through programmes such as REIPPPP has accelerated solar and wind deployment, contributing to solar electricity generation reaching 19.85 TWh in 2024.
+
+Recent energy statistics indicate that coal's contribution to South Africa's electricity mix declined from approximately 90% in 2016 to 83% in 2024, and further to about 74% in early 2025. During the same period, solar and wind generation increased substantially, with solar contributing more than 11% of electricity generation in some months of 2025. These trends suggest that renewable energy is increasingly displacing coal-fired electricity and reducing the carbon intensity of the power sector.
+
+The climate benefits are significant because coal-fired electricity generation typically emits approximately 0.9–1.0 kg of CO₂ per kWh of electricity produced. As solar generation replaces coal-based generation, substantial greenhouse gas emissions can be avoided while simultaneously improving energy security and reducing dependence on aging fossil-fuel infrastructure.
+
+The South African case demonstrates that large-scale renewable energy deployment can support multiple objectives simultaneously: reducing emissions, diversifying electricity supply, mitigating load-shedding risks, and supporting national commitments under the Paris Agreement. Similar expansion of solar energy across other African countries could play an important role in achieving low-carbon economic development while meeting growing electricity demand.
+
+## Limitations
+
+This study focuses exclusively on solar electricity generation and does not directly evaluate installed capacity, investment flows, electricity demand, or greenhouse gas emissions. While policy and climate-related interpretations are supported by existing literature, causal relationships between solar deployment and emissions reductions were not directly quantified.
+
+Future studies could integrate carbon emissions, fossil fuel generation, investment, and energy access data to provide a more comprehensive assessment of Africa's energy transition.
+
+## Future Work
+
+- Analyze relationships between solar generation and CO₂ emissions across African countries.
+- Investigate the impact of renewable energy policies on solar deployment using statistical methods.
+- Compare solar generation with GDP, population, and electricity access indicators.
+- Expand the analysis to include wind, hydroelectric, and bioenergy generation.
+- Develop interactive dashboards using Power BI or Plotly.
+- Apply forecasting techniques to predict future solar electricity generation trends.
+
+###References
+Climate Home News. (2026, February 4). Africa records fastest-ever solar growth as installations jump in 2025. climatechangenews.com
+Department of Forestry, Fisheries and the Environment. (2025). Minister George welcomes decline in coal's share of South Africa's electricity generation mix. Republic of South Africa. dffe.gov.za
+Ember. (2026). Africa electricity profile. ember-energy.org
+Global Solar Council. (2025). Africa solar growth 2025: Drivers and import dynamics. Solarbytes. solarbytes.info
+South African Photovoltaic Industry Association. (2025). SAPVIA sees ongoing solar market recovery laying basis for industrialisation. Engineering News. engineeringnews.co.za
+South African Photovoltaic Industry Association. (2026). Parliamentary briefing on national grid capacity and REIPPPP procurement. sawea.org.za
